@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VYNOTEKA — Dzirkstošie vīni / Игристые вина</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .course-next { display:block; margin:32px 0 8px auto; min-width:180px; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand brand-logos"><img class="brand-logo-main" alt="VYNOTEKA" src="data:image/png;base64,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"><img class="brand-logo-slogan" alt="VYNOTEKA slogan" src="https://vynoteka.lv/build/assets/images/slogan_lv.svg"></div>
+  <div class="top-center"><span data-ru>Игристые вина и шампанское</span><span data-lv>Dzirkstošie vīni un šampanietis</span></div>
+  <div class="language-switch">
+    <button id="lvBtn" class="lang active">LV</button>
+    <button id="ruBtn" class="lang">RU</button>
+  </div>
+</header>
+<section id="landing" class="landing">
+  <div class="landing-wrap">
+    <div class="landing-topline">
+      <span class="eyebrow" data-ru>ВНУТРЕННИЙ КУРС</span>
+      <span class="eyebrow" data-lv>IEKŠĒJAIS KURSS</span>
+      <div class="landing-lang">
+        
+      </div>
+    </div>
+
+    <div class="landing-hero">
+      <div class="hero-copy">
+        <div class="hero-kicker">
+          <span data-ru>WINE ACADEMY</span><span data-lv>WINE ACADEMY</span>
+        </div>
+        <h1 data-ru>Игристые вина<br><strong>и шампанское</strong></h1>
+        <h1 data-lv>Dzirkstošie vīni<br><strong>un šampanietis</strong></h1>
+        <p data-ru>Практический курс для сотрудников магазина: научись быстро понимать категорию, объяснять разницу между стилями и уверенно рекомендовать бутылку клиенту.</p>
+        <p data-lv>Praktisks kurss veikala darbiniekiem: iemācies ātri orientēties kategorijā, izskaidrot atšķirības starp stiliem un pārliecinoši ieteikt klientam piemērotu pudeli.</p>
+        <div class="hero-actions">
+          <span class="hero-note" data-ru>11 модулей · 1 финальный тест</span>
+          <span class="hero-note" data-lv>11 moduļi · 1 noslēguma tests</span>
+        </div>
+      </div>
+
+      <div class="hero-side bottle-showcase">
+          <img class="bottle-composition-hero" src="assets/bottle_composition.png" alt="Jeeper, Cava, Crémant de Loire and Prosecco">
+      </div>
+    </div>
+
+    
+    </div>
+
+    <div class="landing-section-title">
+      <span class="eyebrow course-eyebrow" data-ru>ЧТО БУДЕТ ВНУТРИ</span>
+      <span class="eyebrow course-eyebrow" data-lv>KAS BŪS KURSĀ</span>
+      <h2 data-ru><span class="white-title white-hero-title hero-subtitle-small">От основ к уверенной рекомендации</span></h2>
+      <h2 data-lv><span class="white-hero-title hero-subtitle-small">No pamatiem līdz pārliecinošam ieteikumam</span></h2>
+    </div>
+
+    <div class="module-grid">
+      <article><span>01</span><h3 data-ru>Введение</h3><h3 data-lv>Ievads</h3><p data-ru>Что такое игристое и что важно знать продавцу.</p><p data-lv>Kas ir dzirkstošais vīns un kas jāzina pārdevējam.</p></article>
+      <article><span>02</span><h3 data-ru>Основы категории</h3><h3 data-lv>Kategorijas pamati</h3><p data-ru>Главные характеристики и терминология.</p><p data-lv>Svarīgākās īpašības un termini.</p></article>
+      <article><span>03</span><h3 data-ru>Производство</h3><h3 data-lv>Ražošana</h3><p data-ru>Традиционный, танковый метод и газификация.</p><p data-lv>Tradicionālā, tvertnes metode un gāzēšana.</p></article>
+      <article><span>04</span><h3 data-ru>Champagne</h3><h3 data-lv>Champagne</h3><p data-ru>Что отличает Champagne от других игристых.</p><p data-lv>Ar ko Champagne atšķiras no citiem dzirkstošajiem.</p></article>
+      <article><span>05</span><h3 data-ru>Страны и категории</h3><h3 data-lv>Valstis un kategorijas</h3><p data-ru>Prosecco, Cava, Crémant и другие.</p><p data-lv>Prosecco, Cava, Crémant un citi.</p></article>
+      <article><span>06</span><h3 data-ru>Сладость</h3><h3 data-lv>Salduma līmenis</h3><p data-ru>Brut, Extra Brut, Extra Dry, Demi-Sec.</p><p data-lv>Brut, Extra Brut, Extra Dry, Demi-Sec.</p></article>
+      <article><span>07</span><h3 data-ru>Сорта</h3><h3 data-lv>Vīnogu šķirnes</h3><p data-ru>Chardonnay, Pinot Noir, Glera и другие.</p><p data-lv>Chardonnay, Pinot Noir, Glera un citas.</p></article>
+      <article><span>08</span><h3 data-ru>Этикетка</h3><h3 data-lv>Etiķete</h3><p data-ru>Учимся читать этикетку Prosecco и понимать главное.</p><p data-lv>Mācāmies lasīt Prosecco etiķeti un saprast svarīgāko.</p></article>
+      <article><span>09</span><h3 data-ru>Продажа</h3><h3 data-lv>Pārdošana</h3><p data-ru>Как задать правильные вопросы клиенту.</p><p data-lv>Kādus jautājumus uzdot klientam.</p></article>
+      <article><span>10</span><h3 data-ru>Ситуации</h3><h3 data-lv>Situācijas</h3><p data-ru>Реальные покупательские сценарии.</p><p data-lv>Reālas pircēju situācijas.</p></article>
+<article class="module-final"><span>11</span><h3 data-ru>Финальный тест</h3><h3 data-lv>Noslēguma tests</h3><p data-ru>17 вопросов, проходной результат — 80%.</p><p data-lv>17 jautājumi, nokārtošanai — 80%.</p></article>
+    </div>
+
+  </div>
+</section>
+<div class="app" id="courseApp">
+<aside class="sidebar">
+  <div class="progress-row"><span data-ru>Прогресс курса</span><span data-lv>Kursa progress</span><b id="progressText">0%</b></div>
+  <div class="progress"><div id="progressFill"></div></div>
+
+  <nav>
+    <button class="nav active" data-target="intro"><span>01</span><span data-ru>Введение</span><span data-lv>Ievads</span></button>
+    <button class="nav" data-target="basics"><span>02</span><span data-ru>Основы категории</span><span data-lv>Kategorijas pamati</span></button>
+    <button class="nav" data-target="methods"><span>03</span><span data-ru>Методы производства</span><span data-lv>Ražošanas metodes</span></button>
+    <button class="nav" data-target="champagne"><span>04</span><span data-ru>Шампанское</span><span data-lv>Šampanietis</span></button>
+    <button class="nav" data-target="world"><span>05</span><span data-ru>Страны и категории</span><span data-lv>Valstis un kategorijas</span></button>
+    <button class="nav" data-target="sweet"><span>06</span><span data-ru>Сладость</span><span data-lv>Salduma līmenis</span></button>
+    <button class="nav" data-target="grapes"><span>07</span><span data-ru>Сорта винограда</span><span data-lv>Vīnogu šķirnes</span></button>
+    <button class="nav" data-target="labels"><span>08</span><span data-ru>Этикетка</span><span data-lv>Etiķete</span></button>
+    <button class="nav" data-target="sales"><span>09</span><span data-ru>Продажа</span><span data-lv>Pārdošana</span></button>
+    <button class="nav" data-target="cases"><span>10</span><span data-ru>Ситуации в магазине</span><span data-lv>Situācijas veikalā</span></button>
+    <button class="nav" data-target="exam"><span>11</span><span data-ru>Финальный тест</span><span data-lv>Noslēguma tests</span></button>
+  </nav>
+
+  <div class="side-note">
+    <b data-ru>Цель курса</b><b data-lv>Kursa mērķis</b>
+    <p data-ru>Научиться уверенно ориентироваться в категории и рекомендовать клиенту подходящее игристое из реального ассортимента VYNOTEKA.</p>
+    <p data-lv>Iemācīties pārliecinoši orientēties kategorijā un ieteikt klientam piemērotu dzirkstošo vīnu no VYNOTEKA sortimenta.</p>
+  </div>
+</aside>
+
+<main class="content">
+
+<section id="intro" class="section active">
+  <div class="hero">
+    <div>
+      <div class="eyebrow" data-ru>КУРС ДЛЯ СОТРУДНИКОВ МАГАЗИНА</div><div class="eyebrow" data-lv>VEIKALA DARBINIEKU KURSS</div>
+      <h1 data-ru>Игристые вина<br>и шампанское</h1><h1 data-lv>Dzirkstošie vīni<br>un šampanietis</h1>
+      <p data-ru>Практический курс: основные понятия, производство, сладость, регионы, этикетка и рекомендации по ассортименту VYNOTEKA.</p>
+      <p data-lv>Praktisks kurss: pamatjēdzieni, ražošana, salduma līmeņi, reģioni, etiķete un ieteikumi darbam ar VYNOTEKA sortimentu.</p>
+    </div>
+    <div class="hero-icon">🍾</div>
+  </div>
+
+</section>
+
+<section id="basics" class="section">
+  <div class="heading"><div class="eyebrow">02</div><h2 data-ru>Основы категории</h2><h2 data-lv>Kategorijas pamati</h2><p data-ru>Игристое вино — вино с растворённым углекислым газом, создающим пузырьки.</p><p data-lv>Dzirkstošais vīns ir vīns ar izšķīdušu ogļskābo gāzi, kas veido burbuļus.</p></div>
+  <div class="definition">
+    <div><b data-ru>Что покупатель хочет понять?</b><b data-lv>Ko pircējs vēlas saprast?</b>
+      <div class="feature-list">
+        <span data-ru>Насколько сухое?</span><span data-lv>Cik sauss?</span>
+        <span data-ru>Фруктовое или сложное?</span><span data-lv>Augļains vai sarežģītāks?</span>
+        <span data-ru>Откуда оно?</span><span data-lv>No kurienes tas ir?</span>
+        <span data-ru>Подходит ли к событию?</span><span data-lv>Vai der konkrētam notikumam?</span>
+      </div>
+    </div>
+    <div class="big-fact"><span>CO₂</span><p data-ru>Пузырьки — ключевой признак категории.</p><p data-lv>Burbuļi ir galvenā kategorijas pazīme.</p></div>
+  </div>
+  <div class="mini-grid">
+    <article><b data-ru>Белое</b><b data-lv>Baltais</b><p data-ru>Самый распространённый стиль.</p><p data-lv>Visizplatītākais stils.</p></article>
+    <article><b data-ru>Розовое</b><b data-lv>Rozā</b><p data-ru>Часто более ягодное и ароматное.</p><p data-lv>Bieži izteiktāks ogu un augļu raksturs.</p></article>
+    <article><b data-ru>Красное</b><b data-lv>Sarkanais</b><p data-ru>Отдельная ниша игристых вин.</p><p data-lv>Atsevišķa dzirkstošo vīnu niša.</p></article>
+  </div>
+</section>
+
+<section id="methods" class="section">
+  <div class="heading"><div class="eyebrow">03</div><h2 data-ru>Методы производства</h2><h2 data-lv>Ražošanas metodes</h2><p data-ru>Главное для продавца — понимать разницу между традиционным и танковым методом.</p><p data-lv>Pārdevējam galvenais ir saprast atšķirību starp tradicionālo un tvertnes metodi.</p></div>
+  <div class="method"><b>01</b><div><h3 data-ru>Традиционный метод</h3><h3 data-lv>Tradicionālā metode</h3><p data-ru>Вторичная ферментация проходит в бутылке. Контакт с дрожжами может давать более сложные, хлебные и кремовые оттенки.</p><p data-lv>Otrā fermentācija notiek pudelē. Kontakts ar raugiem var piešķirt sarežģītākas, maizes un krēmveida nianses.</p><div class="tag" data-ru>Champagne · Cava · Franciacorta · многие Crémant</div><div class="tag" data-lv>Champagne · Cava · Franciacorta · daudzi Crémant</div></div></div>
+  <div class="method"><b>02</b><div><h3 data-ru>Танковый метод / Charmat</h3><h3 data-lv>Tvertnes metode / Charmat</h3><p data-ru>Вторичная ферментация проходит в герметичном резервуаре. Хорошо сохраняет свежие фруктовые и цветочные ароматы.</p><p data-lv>Otrā fermentācija notiek slēgtā tvertnē. Labi saglabā svaigus augļu un ziedu aromātus.</p><div class="tag" data-ru>Частая ассоциация: Prosecco</div><div class="tag" data-lv>Bieža asociācija: Prosecco</div></div></div>
+  <div class="method"><b>03</b><div><h3 data-ru>Газификация</h3><h3 data-lv>Gāzēšana</h3><p data-ru>Готовое вино насыщают CO₂. Обычно это более простой и доступный стиль.</p><p data-lv>Gatavam vīnam pievieno CO₂. Parasti tas veido vienkāršāku un pieejamāku stilu.</p></div></div>
+  <div class="gold-note"><b data-ru>Важно:</b><b data-lv>Svarīgi:</b><span data-ru>метод не означает «хорошо/плохо» — он определяет стиль и характер.</span><span data-lv>metode nenozīmē “labs/slikts” — tā ietekmē stilu un raksturu.</span></div>
+</section>
+
+<section id="champagne" class="section">
+  <div class="heading"><div class="eyebrow">04</div><h2 data-ru>Что такое Champagne?</h2><h2 data-lv>Kas ir Champagne?</h2></div>
+  <div class="champagne"><strong>CHAMPAGNE</strong><p data-ru>Защищённое географическое наименование. Champagne производится в регионе Champagne во Франции по установленным правилам.</p><p data-lv>Aizsargāts ģeogrāfiskais nosaukums. Champagne ražo Champagne reģionā Francijā saskaņā ar noteiktiem noteikumiem.</p></div>
+  <div class="grid-3">
+    <article class="card"><h3 data-ru>Регион</h3><h3 data-lv>Reģions</h3><p data-ru>Champagne, Франция.</p><p data-lv>Champagne, Francija.</p></article>
+    <article class="card"><h3 data-ru>Метод</h3><h3 data-lv>Metode</h3><p data-ru>Традиционный метод.</p><p data-lv>Tradicionālā metode.</p></article>
+    <article class="card"><h3 data-ru>Основные сорта</h3><h3 data-lv>Svarīgākās šķirnes</h3><p>Chardonnay · Pinot Noir · Pinot Meunier</p></article>
+  </div>
+  <div class="gold-note"><b data-ru>Для продавца:</b><b data-lv>Pārdevējam:</b><span data-ru>если клиент говорит «шампанское», уточни, нужен ли именно Champagne или любое игристое.</span><span data-lv>ja klients saka “šampanietis”, noskaidro, vai nepieciešams tieši Champagne vai jebkurš dzirkstošais vīns.</span></div>
+</section>
+
+<section id="world" class="section">
+  <div class="heading"><div class="eyebrow">05</div><h2 data-ru>Главные страны и категории</h2><h2 data-lv>Svarīgākās valstis un kategorijas</h2></div>
+  <div class="country-grid">
+    <article><b>🇫🇷 France</b><h3>Champagne / Crémant</h3><p data-ru>Традиционный метод; от доступных Crémant до премиального Champagne.</p><p data-lv>Tradicionālā metode; no pieejamāka Crémant līdz premium Champagne.</p></article>
+    <article><b>🇮🇹 Italy</b><h3>Prosecco / Asti / Lambrusco / Franciacorta</h3><p data-ru>От свежего фруктового Prosecco до сладкого Asti, Lambrusco и более сложной Franciacorta.</p><p data-lv>No svaiga augļu Prosecco līdz saldam Asti, Lambrusco un sarežģītākai Franciacorta.</p></article>
+    <article><b>🇪🇸 Spain</b><h3>Cava</h3><p data-ru>Традиционный метод и часто хорошее соотношение цены и качества.</p><p data-lv>Tradicionālā metode un bieži laba cenas/kvalitātes attiecība.</p></article>
+  </div>
+
+  <div class="guide-block">
+    <div class="guide-kicker">PRAKTISKAIS CEĻVEDIS</div>
+    <h3 data-lv>6 populāri dzirkstošo vīnu stili</h3>
+    <h3 data-ru>6 популярных стилей игристых вин</h3>
+    <p class="guide-intro" data-lv>Īss pārskats, lai veikalā ātri saprastu, ko piedāvāt klientam.</p>
+    <p class="guide-intro" data-ru>Краткая шпаргалка, чтобы быстро понять, что предложить клиенту.</p>
+    <div class="style-grid">
+      <article class="style-card champagne-card">
+        <div class="style-head"><strong>CHAMPAGNE</strong><span data-lv>Francija · Šampaņa</span><span data-ru>Франция · Шампань</span></div>
+        <div class="style-body">
+          <div><b data-lv>Metode</b><b data-ru>Метод</b><span data-lv>Tradicionālā metode</span><span data-ru>Традиционный метод</span></div>
+          <div><b data-lv>Vīnogas</b><b data-ru>Виноград</b><span>Chardonnay · Pinot Noir · Pinot Meunier</span></div>
+          <div><b data-lv>Garša</b><b data-ru>Вкус</b><span data-lv>Elegants, sarežģīts, krēmīgs; brioche, rauga un citrusaugļu nianses.</span><span data-ru>Элегантный, сложный, кремовый; оттенки бриоши, дрожжей и цитруса.</span></div>
+          <div><b data-lv>Cena</b><b data-ru>Цена</b><span>€30–100+</span></div>
+        </div>
+      </article>
+      <article class="style-card cremant-card">
+        <div class="style-head"><strong>CRÉMANT</strong><span data-lv>Francija · dažādi reģioni</span><span data-ru>Франция · разные регионы</span></div>
+        <div class="style-body">
+          <div><b data-lv>Metode</b><b data-ru>Метод</b><span data-lv>Tradicionālā metode (otrreizējā fermentācija pudelē)</span><span data-ru>Традиционный метод (вторичная ферментация в бутылке)</span></div>
+          <div><b data-lv>Vīnogas</b><b data-ru>Виноград</b><span data-lv>Atkarīgs no reģiona: Chardonnay, Pinot Noir, Chenin Blanc u.c.</span><span data-ru>Зависит от региона: Chardonnay, Pinot Noir, Chenin Blanc и др.</span></div>
+          <div><b data-lv>Garša</b><b data-ru>Вкус</b><span data-lv>Elegants, svaigs, ar ābolu, ziedu un kauleņu niansēm.</span><span data-ru>Элегантный, свежий, с яблочными, цветочными и косточковыми оттенками.</span></div>
+          <div><b data-lv>Stils</b><b data-ru>Стиль</b><span>No Brut Nature līdz Demi-Sec</span></div>
+          <div><b data-lv>Cena</b><b data-ru>Цена</b><span>€15–35</span></div>
+        </div>
+      </article>
+      <article class="style-card cava-card">
+        <div class="style-head"><strong>CAVA</strong><span data-lv>Spānija</span><span data-ru>Испания</span></div>
+        <div class="style-body">
+          <div><b data-lv>Metode</b><b data-ru>Метод</b><span data-lv>Tradicionālā metode</span><span data-ru>Традиционный метод</span></div>
+          <div><b data-lv>Vīnogas</b><b data-ru>Виноград</b><span>Macabeo · Xarel-lo · Parellada u.c.</span></div>
+          <div><b data-lv>Garša</b><b data-ru>Вкус</b><span data-lv>Svaigs, augļains, reizēm minerāls; citrusaugļu un brioša nianses.</span><span data-ru>Свежий, фруктовый, иногда минеральный; цитрусовые и бриошь.</span></div>
+          <div><b data-lv>Kvalitātes līmeņi</b><b data-ru>Уровни качества</b><span>Cava Reserva · Gran Reserva · Paraje Calificado</span></div>
+          <div><b data-lv>Cena</b><b data-ru>Цена</b><span>€10–25</span></div>
+        </div>
+      </article>
+      <article class="style-card prosecco-card">
+        <div class="style-head"><strong>PROSECCO</strong><span data-lv>Itālija · Veneto, Friuli</span><span data-ru>Италия · Венето, Фриули</span></div>
+        <div class="style-body">
+          <div><b data-lv>Metode</b><b data-ru>Метод</b><span data-lv>Charmat metode (fermentācija tvertnēs)</span><span data-ru>Метод Шарма (ферментация в резервуарах)</span></div>
+          <div><b data-lv>Vīnogas</b><b data-ru>Виноград</b><span>Glera (agrāk Prosecco)</span></div>
+          <div><b data-lv>Garša</b><b data-ru>Вкус</b><span data-lv>Viegls, augļains, atsvaidzinošs; zaļie āboli, bumbieri, citrusaugļi, ziedi.</span><span data-ru>Лёгкий, фруктовый, освежающий; зелёное яблоко, груша, цитрус, цветы.</span></div>
+          <div><b data-lv>Kvalitātes līmeņi</b><b data-ru>Уровни качества</b><span>Prosecco DOC · Prosecco DOCG · Conegliano Valdobbiadene DOCG · Asolo Prosecco DOCG</span></div>
+          <div><b data-lv>Cena</b><b data-ru>Цена</b><span>€8–20</span></div>
+        </div>
+      </article>
+      <article class="style-card lambrusco-card">
+        <div class="style-head"><strong>LAMBRUSCO</strong><span data-lv>Itālija · Emilia-Romagna</span><span data-ru>Италия · Эмилия-Романья</span></div>
+        <div class="style-body">
+          <div><b data-lv>Metode</b><b data-ru>Метод</b><span data-lv>Charmat metode</span><span data-ru>Метод Шарма</span></div>
+          <div><b data-lv>Vīnogas</b><b data-ru>Виноград</b><span>Lambrusco šķirnes</span></div>
+          <div><b data-lv>Garša</b><b data-ru>Вкус</b><span data-lv>Augļains, ogains, aromātisks; bieži viegli saldāks, 8–11% alkohola.</span><span data-ru>Фруктовый, ягодный, ароматный; часто слегка сладковатый, 8–11% алкоголя.</span></div>
+          <div><b data-lv>Stils</b><b data-ru>Стиль</b><span>Secco → Dolce</span></div>
+          <div><b data-lv>Cena</b><b data-ru>Цена</b><span>€6–12</span></div>
+        </div>
+      </article>
+      <article class="style-card asti-card">
+        <div class="style-head"><strong>ASTI / MOSCATO D'ASTI</strong><span data-lv>Itālija · Pjemonta</span><span data-ru>Италия · Пьемонт</span></div>
+        <div class="style-body">
+          <div><b data-lv>Metode</b><b data-ru>Метод</b><span data-lv>Charmat / tvertnes metode</span><span data-ru>Танковый / резервуарный метод</span></div>
+          <div><b data-lv>Vīnogas</b><b data-ru>Виноград</b><span>Moscato Bianco</span></div>
+          <div><b data-lv>Garša</b><b data-ru>Вкус</b><span data-lv>Ļoti aromātisks, ziedošs, persiku, aprikožu, medus un vīnogu nianses.</span><span data-ru>Очень ароматный, цветочный; персик, абрикос, мёд и белый виноград.</span></div>
+          <div><b data-lv>Kvalitātes līmeņi</b><b data-ru>Уровни качества</b><span>Asti DOCG · Moscato d'Asti DOCG</span></div>
+          <div><b data-lv>Cena</b><b data-ru>Цена</b><span>€8–15</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="guide-reference">
+      <div><b data-lv>Ātrā orientācija</b><b data-ru>Быстрая ориентация</b><p data-lv>Tradicionālā metode → Champagne, Crémant, Cava. Tvertnes/Charmat → Prosecco, Lambrusco, Asti.</p><p data-ru>Традиционный метод → Champagne, Crémant, Cava. Танковый/Charmat → Prosecco, Lambrusco, Asti.</p></div>
+      <div><b data-lv>Cenu orientieris no ceļveža</b><b data-ru>Ориентир по цене из гида</b><p>Champagne €30–100+ · Crémant €15–35 · Cava €10–25 · Prosecco €8–20 · Lambrusco €6–12 · Asti €8–15</p></div>
+    </div>
+    <details class="guide-image-details" open>
+      <summary><span data-lv>Atvērt pilno dzirkstošo vīnu ceļvedi</span><span data-ru>Открыть полный гид по игристым винам</span></summary>
+      <img src="assets/dzirkstoso-vinu-celvedis.png" alt="Dzirkstošo vīnu ceļvedis">
+    </details>
+  </div>
+
+  <div class="quality-levels">
+    <div class="eyebrow" data-lv>KVALITĀTES LĪMEŅI</div>
+    <div class="eyebrow" data-ru>УРОВНИ КАЧЕСТВА</div>
+    <div class="quality-grid">
+      <article class="quality-card">
+        <h3><span data-lv>CAVA</span><span data-ru>CAVA</span> <small>(<span data-lv>Spānija</span><span data-ru>Испания</span>)</small></h3>
+        <ul>
+          <li><span data-lv>Cava</span><span data-ru>Cava</span></li>
+          <li><span data-lv>Cava Reserva (vismaz 15 mēn. uz nogulsnēm)</span><span data-ru>Cava Reserva (минимум 15 месяцев на осадке)</span></li>
+          <li><span data-lv>Cava Gran Reserva (vismaz 30 mēn. uz nogulsnēm)</span><span data-ru>Cava Gran Reserva (минимум 30 месяцев на осадке)</span></li>
+          <li><strong>★</strong> <span data-lv>Cava de Paraje Calificado (augstākā kategorija)</span><span data-ru>Cava de Paraje Calificado (высшая категория)</span></li>
+        </ul>
+      </article>
+
+      <article class="quality-card">
+        <h3><span data-lv>PROSECCO</span><span data-ru>PROSECCO</span> <small>(<span data-lv>Itālija</span><span data-ru>Италия</span>)</small></h3>
+        <ul>
+          <li><span data-lv>Prosecco DOC</span><span data-ru>Prosecco DOC</span></li>
+          <li><span data-lv>Prosecco DOCG</span><span data-ru>Prosecco DOCG</span></li>
+          <li><strong>★</strong> <span data-lv>Conegliano Valdobbiadene DOCG (premium zona)</span><span data-ru>Conegliano Valdobbiadene DOCG (премиальная зона)</span></li>
+          <li><strong>★</strong> <span data-lv>Asolo Prosecco DOCG</span><span data-ru>Asolo Prosecco DOCG</span></li>
+        </ul>
+      </article>
+
+      <article class="quality-card">
+        <h3><span data-lv>CRÉMANT</span><span data-ru>CRÉMANT</span> <small>(<span data-lv>Francija</span><span data-ru>Франция</span>)</small></h3>
+        <p data-lv>Oficiālas kvalitātes pakāpes nav, bet svarīgs ir reģions un ražotājs.</p>
+        <p data-ru>Официальной системы уровней качества нет, но важны регион и производитель.</p>
+        <p class="quality-hint"><b data-lv>Meklē:</b><b data-ru>Ищи:</b>
+          <span>Crémant d’Alsace · Crémant de Bourgogne · Crémant de Loire</span>
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="sweet" class="section">
+  <div class="heading"><div class="eyebrow">06</div><h2 data-ru>Сладость: Brut и другие стили</h2><h2 data-lv>Saldums: Brut un citi stili</h2><p data-ru>Важно: название Extra Dry звучит «суше», но по факту этот стиль обычно слаще Brut.</p><p data-lv>Svarīgi: Extra Dry nosaukums izklausās “sausāks”, bet faktiski tas parasti ir saldāks par Brut.</p></div>
+  <div class="sweet-scale">
+    <div><b>Brut Nature</b><small data-ru>0–3 g/l · самый сухой</small><small data-lv>0–3 g/l · sausākais</small></div>
+    <div><b>Extra Brut</b><small data-ru>0–6 g/l · очень сухой</small><small data-lv>0–6 g/l · ļoti sauss</small></div>
+    <div class="selected"><b>Brut</b><small data-ru>до 12 g/l · сухой</small><small data-lv>līdz 12 g/l · sauss</small></div>
+    <div><b>Extra Dry</b><small data-ru>12–17 g/l · слаще Brut</small><small data-lv>12–17 g/l · saldāks par Brut</small></div>
+    <div><b>Dry / Sec</b><small data-ru>17–32 g/l · ещё слаще</small><small data-lv>17–32 g/l · vēl saldāks</small></div>
+    <div><b>Demi-Sec</b><small data-ru>32+ g/l · полусладкий/сладковатый</small><small data-lv>32+ g/l · pussalds</small></div>
+    <div><b>Doux</b><small data-ru>50+ g/l · самый сладкий</small><small data-lv>50+ g/l · saldākais</small></div>
+  </div>
+  <div class="red-note"><b data-ru>Запомни:</b><b data-lv>Atceries:</b><span data-ru> для запроса «сухое» первым рассматривай Brut или Extra Brut.</span><span data-lv> ja klients vēlas “sausu”, vispirms skaties uz Brut vai Extra Brut.</span></div>
+</section>
+
+<section id="grapes" class="section">
+  <div class="heading"><div class="eyebrow">07</div><h2 data-ru>Главные сорта винограда</h2><h2 data-lv>Svarīgākās vīnogu šķirnes</h2></div>
+  <div class="grape-grid">
+    <article><b>Chardonnay</b><p data-ru>Цитрус, яблоко, свежесть, элегантность.</p><p data-lv>Citrusi, ābols, svaigums, elegance.</p><span>Champagne · Cava · Crémant</span></article>
+    <article><b>Pinot Noir</b><p data-ru>Ягоды, тело, структура.</p><p data-lv>Ogas, struktūra, ķermenis.</p><span>Champagne · Rosé · Crémant</span></article>
+    <article><b>Pinot Meunier</b><p data-ru>Фруктовость и мягкость.</p><p data-lv>Augļainums un maigums.</p><span>Champagne</span></article>
+    <article><b>Glera</b><p data-ru>Яблоко, груша, белые цветы, свежесть.</p><p data-lv>Ābols, bumbieris, baltie ziedi, svaigums.</p><span>Prosecco</span></article>
+    <article><b>Macabeo</b><p data-ru>Один из классических сортов Cava.</p><p data-lv>Viena no klasiskajām Cava šķirnēm.</p><span>Cava</span></article>
+    <article><b>Xarel-lo</b><p data-ru>Структура и свежесть в купажах Cava.</p><p data-lv>Struktūra un svaigums Cava kupāžās.</p><span>Cava</span></article>
+  </div>
+</section>
+
+<section id="labels" class="section">
+  <div class="heading"><div class="eyebrow">08</div><h2 data-ru>Как читать этикетку</h2><h2 data-lv>Kā lasīt etiķeti</h2><p data-ru>Перед рекомендацией посмотри минимум на пять вещей.</p><p data-lv>Pirms ieteikuma pārbaudi vismaz piecas lietas.</p></div>
+  <div class="label-demo">
+    <div class="wine-label-visual">
+      <div class="prosecco-label">
+        <div class="label-small">PROSECCO</div>
+        <div class="label-main">DOC</div>
+        <div class="label-sub">EXTRA DRY</div>
+        <div class="label-bottom">750 ml · 11% vol.</div>
+      </div>
+      <div class="callout callout-1"><b>1</b><span data-ru>Категория</span><span data-lv>Kategorija</span></div>
+      <div class="callout callout-2"><b>2</b><span data-ru>Класс / происхождение</span><span data-lv>Izcelsme / kategorija</span></div>
+      <div class="callout callout-3"><b>3</b><span data-ru>Уровень сладости</span><span data-lv>Salduma līmenis</span></div>
+      <div class="callout callout-4"><b>4</b><span data-ru>Объём и крепость</span><span data-lv>Tilpums un stiprums</span></div>
+    </div>
+  </div>
+
+
+
+  <div class="label-grid">
+    <div class="label-card"><strong>1</strong><h3 data-ru>Категория</h3><h3 data-lv>Kategorija</h3><p>Champagne · Prosecco · Cava · Crémant</p></div>
+    <div class="label-card"><strong>2</strong><h3 data-ru>Сладость</h3><h3 data-lv>Saldums</h3><p>Brut · Extra Brut · Extra Dry · Demi-Sec</p></div>
+    <div class="label-card"><strong>3</strong><h3 data-ru>Происхождение</h3><h3 data-lv>Izcelsme</h3><p data-ru>Страна, регион, DOC/DOCG/AOP и т.д.</p><p data-lv>Valsts, reģions, DOC/DOCG/AOP u.c.</p></div>
+    <div class="label-card"><strong>4</strong><h3 data-ru>Сорт</h3><h3 data-lv>Šķirne</h3><p data-ru>Если указан на этикетке.</p><p data-lv>Ja norādīts uz etiķetes.</p></div>
+  </div>
+</section>
+
+
+
+<section id="sales" class="section">
+  <div class="heading"><div class="eyebrow">09</div><h2 data-ru>Как продавать</h2><h2 data-lv>Kā pārdot</h2><p data-ru>Продавец не должен читать клиенту лекцию. Нужно быстро понять потребность и дать несколько понятных варианта.</p><p data-lv>Pārdevējam nav jālasa klientam lekcija. Ātri noskaidro vajadzību un piedāvā dažādus saprotamus variantus.</p></div>
+  <div class="sales-grid">
+    <div><b>1</b><h3 data-ru>Повод</h3><h3 data-lv>Notikums</h3><p data-ru>Подарок, праздник, ужин, аперитив?</p><p data-lv>Dāvana, svētki, vakariņas, aperitīvs?</p></div>
+    <div><b>2</b><h3 data-ru>Вкус</h3><h3 data-lv>Garša</h3><p data-ru>Сухое, фруктовое, сладкое, сложное?</p><p data-lv>Sauss, augļains, salds, sarežģīts?</p></div>
+    <div><b>3</b><h3 data-ru>Бюджет</h3><h3 data-lv>Budžets</h3><p data-ru>Какой ориентир по цене?</p><p data-lv>Kāds ir cenu orientieris?</p></div>
+    <div><b>4</b><h3 data-ru>Рекомендация</h3><h3 data-lv>Ieteikums</h3><p data-ru>Предложи конкретную бутылку и коротко объясни почему.</p><p data-lv>Piedāvā konkrētu pudeli un īsi paskaidro, kāpēc.</p></div>
+  </div>
+  <div class="sales-script"><b data-ru>Рабочая фраза:</b><b data-lv>Praktiska frāze:</b><p data-ru>«Это для подарка или для себя? Предпочитаете сухое или более фруктовое? Какой бюджет? Тогда я покажу несколько подходящих вариантов».</p><p data-lv>“Tas ir dāvanai vai sev? Vai dodat priekšroku sausam vai augļainākam? Kāds ir budžets? Tad parādīšu dažādus piemērotus variantus.”</p></div>
+
+  <div class="service-guide">
+    <div class="service-head" data-lv>PRAKTISKĀ PASNIEGŠANA</div><div class="service-head" data-ru>ПРАКТИЧЕСКАЯ ПОДАЧА</div>
+    <div class="service-grid">
+      <div><b data-lv>Pasniegšana</b><b data-ru>Подача</b><p data-lv>Champagne ap 8–10 °C; Lambrusco un Asti ap 6–8 °C.</p><p data-ru>Champagne около 8–10 °C; Lambrusco и Asti около 6–8 °C.</p></div>
+      <div><b data-lv>Glāzes</b><b data-ru>Бокалы</b><p data-lv>Šaura flute glāze palīdz saglabāt burbulīšus un izcelt aromātus.</p><p data-ru>Узкий фужер помогает сохранить пузырьки и раскрыть аромат.</p></div>
+      <div><b data-lv>Uzglabāšana</b><b data-ru>Хранение</b><p data-lv>Glabāt vēsā, tumšā vietā; ceļvedī norādīta horizontāla pozīcija (izņemot vīnus ar korķi).</p><p data-ru>Хранить в прохладном тёмном месте; в гиде указано горизонтальное положение (кроме вин с пробкой).</p></div>
+      <div><b data-lv>Atvēršana</b><b data-ru>Открытие</b><p data-lv>Turi korķi, lēnām griez pudeli un nekad nevērs korķi pret cilvēku.</p><p data-ru>Держи пробку, медленно вращай бутылку и никогда не направляй пробку на человека.</p></div>
+    </div>
+  </div>
+  <div class="pairing-guide">
+    <div class="service-head" data-lv>KO IETEIKT PIE ĒDIENA</div><div class="service-head" data-ru>С ЧЕМ РЕКОМЕНДОВАТЬ</div>
+    <div class="pairing-grid">
+      <div><b>Champagne</b><span data-lv>Jūras veltes, kaviārs, risoto, balta gaļa</span><span data-ru>Морепродукты, икра, ризотто, белое мясо</span></div>
+      <div><b>Crémant</b><span data-lv>Austeres, kaviārs, risoto, viegli sieri</span><span data-ru>Устрицы, икра, ризотто, мягкие сыры</span></div>
+      <div><b>Cava</b><span data-lv>Aperitīvs, jūras veltes, risoto, grilēti ēdieni</span><span data-ru>Аперитив, морепродукты, ризотто, гриль</span></div>
+      <div><b>Prosecco</b><span data-lv>Aperitīvs, salāti, brusketta, augļi</span><span data-ru>Аперитив, салаты, брускетта, фрукты</span></div>
+      <div><b>Lambrusco</b><span data-lv>Pica, pasta un itāļu virtuve</span><span data-ru>Пицца, паста и итальянская кухня</span></div>
+      <div><b>Asti / Moscato d'Asti</b><span data-lv>Deserti, zemenes, kūkas</span><span data-ru>Десерты, клубника, торты</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="cases" class="section">
+  <div class="heading"><div class="eyebrow">10</div><h2 data-ru>Ситуации в магазине</h2><h2 data-lv>Situācijas veikalā</h2></div>
+  <div class="case" data-answer="c">
+    <h3 data-ru>Ситуация 1</h3><h3 data-lv>Situācija 1</h3>
+    <p data-ru>Клиент: «Мне шампанское до 10 евро». Что сделать?</p><p data-lv>Klients: “Man vajag šampanieti līdz 10 eiro.” Ko darīt?</p>
+    <button onclick="caseCheck(this,'a')"><span data-ru>Дать любую бутылку с пузырьками.</span><span data-lv>Iedot jebkuru dzirkstošā vīna pudeli.</span></button>
+    <button onclick="caseCheck(this,'b')"><span data-ru>Сказать, что это невозможно.</span><span data-lv>Pateikt, ka tas nav iespējams.</span></button>
+    <button onclick="caseCheck(this,'c')"><span data-ru>Уточнить, нужен ли именно Champagne, и при необходимости предложить альтернативу в бюджете.</span><span data-lv>Noskaidrot, vai vajadzīgs tieši Champagne, un vajadzības gadījumā piedāvāt alternatīvu budžeta robežās.</span></button>
+    <div class="case-feedback"></div>
+  </div>
+  <div class="case" data-answer="a">
+    <h3 data-ru>Ситуация 2</h3><h3 data-lv>Situācija 2</h3>
+    <p data-ru>Клиент хочет сухое, но фруктовое.</p><p data-lv>Klients vēlas sausu, bet augļainu vīnu.</p>
+    <button onclick="caseCheck(this,'a')"><span data-ru>Рассмотреть Brut / Prosecco Brut и уточнить бюджет.</span><span data-lv>Apsvērt Brut / Prosecco Brut un noskaidrot budžetu.</span></button>
+    <button onclick="caseCheck(this,'b')"><span data-ru>Сразу предложить Demi-Sec.</span><span data-lv>Uzreiz piedāvāt Demi-Sec.</span></button>
+    <button onclick="caseCheck(this,'c')"><span data-ru>Сказать, что фруктовым сухое быть не может.</span><span data-lv>Pateikt, ka sauss vīns nevar būt augļains.</span></button>
+    <div class="case-feedback"></div>
+  </div>
+</section>
+
+<section id="exam" class="section">
+  <div class="heading"><div class="eyebrow">11</div><h2 data-ru>Финальный тест</h2><h2 data-lv>Noslēguma tests</h2><p data-ru>17 вопросов. Для прохождения нужно набрать минимум 80%.</p><p data-lv>17 jautājumi. Lai nokārtotu, jāiegūst vismaz 80%.</p></div>
+  <form id="exam">
+    <div class="q" data-a="b"><h3 data-ru>1. Что делает вино игристым?</h3><h3 data-lv>1. Kas padara vīnu dzirkstošu?</h3><label><input type="radio" name="q1" value="a"><span data-ru>Сахар</span><span data-lv>Cukurs</span></label><label><input type="radio" name="q1" value="b">CO₂</label><label><input type="radio" name="q1" value="c"><span data-ru>Дуб</span><span data-lv>Ozols</span></label></div>
+    <div class="q" data-a="a"><h3 data-ru>2. Где вторичная ферментация при традиционном методе?</h3><h3 data-lv>2. Kur notiek otrā fermentācija tradicionālajā metodē?</h3><label><input type="radio" name="q2" value="a"><span data-ru>В бутылке</span><span data-lv>Pudelē</span></label><label><input type="radio" name="q2" value="b"><span data-ru>В открытой бочке</span><span data-lv>Atvērtā mucā</span></label><label><input type="radio" name="q2" value="c"><span data-ru>В бокале</span><span data-lv>Glāzē</span></label></div>
+    <div class="q" data-a="c"><h3 data-ru>3. Главный сорт Prosecco?</h3><h3 data-lv>3. Galvenā Prosecco šķirne?</h3><label><input type="radio" name="q3" value="a">Chardonnay</label><label><input type="radio" name="q3" value="b">Pinot Noir</label><label><input type="radio" name="q3" value="c">Glera</label></div>
+    <div class="q" data-a="b"><h3 data-ru>4. Champagne — это…</h3><h3 data-lv>4. Champagne ir…</h3><label><input type="radio" name="q4" value="a"><span data-ru>Любое французское игристое</span><span data-lv>Jebkurš franču dzirkstošais</span></label><label><input type="radio" name="q4" value="b"><span data-ru>Игристое из региона Champagne по правилам аппелласьона</span><span data-lv>Dzirkstošais vīns no Champagne reģiona saskaņā ar noteikumiem</span></label><label><input type="radio" name="q4" value="c"><span data-ru>Любое игристое с Chardonnay</span><span data-lv>Jebkurš dzirkstošais ar Chardonnay</span></label></div>
+    <div class="q" data-a="a"><h3 data-ru>5. Что обычно суше?</h3><h3 data-lv>5. Kurš parasti ir sausāks?</h3><label><input type="radio" name="q5" value="a">Brut</label><label><input type="radio" name="q5" value="b">Demi-Sec</label><label><input type="radio" name="q5" value="c">Doux</label></div>
+    <div class="q" data-a="a"><h3 data-ru>6. Extra Dry по сравнению с Brut обычно…</h3><h3 data-lv>6. Extra Dry salīdzinājumā ar Brut parasti ir…</h3><label><input type="radio" name="q6" value="a"><span data-ru>Слаще</span><span data-lv>Saldāks</span></label><label><input type="radio" name="q6" value="b"><span data-ru>Суше</span><span data-lv>Sausāks</span></label><label><input type="radio" name="q6" value="c"><span data-ru>Без сахара</span><span data-lv>Bez cukura</span></label></div>
+    <div class="q" data-a="b"><h3 data-ru>7. Cava связана с…</h3><h3 data-lv>7. Cava saistīta ar…</h3><label><input type="radio" name="q7" value="a"><span data-ru>Италией</span><span data-lv>Itāliju</span></label><label><input type="radio" name="q7" value="b"><span data-ru>Испанией</span><span data-lv>Spāniju</span></label><label><input type="radio" name="q7" value="c"><span data-ru>Францией Champagne</span><span data-lv>Franciju Champagne</span></label></div>
+    <div class="q" data-a="b"><h3 data-ru>8. Клиент хочет французское игристое, но не Champagne. Что логичнее предложить?</h3><h3 data-lv>8. Klients vēlas franču dzirkstošo vīnu, bet ne Champagne. Ko loģiskāk piedāvāt?</h3><label><input type="radio" name="q8" value="a"><span data-ru>Prosecco</span><span data-lv>Prosecco</span></label><label><input type="radio" name="q8" value="b"><span data-ru>Crémant</span><span data-lv>Crémant</span></label><label><input type="radio" name="q8" value="c"><span data-ru>Cava</span><span data-lv>Cava</span></label></div>
+    <div class="q" data-a="b"><h3 data-ru>9. Что спросить первым при продаже?</h3><h3 data-lv>9. Ko noskaidrot vispirms?</h3><label><input type="radio" name="q9" value="a"><span data-ru>Цвет этикетки</span><span data-lv>Etiķetes krāsu</span></label><label><input type="radio" name="q9" value="b"><span data-ru>Повод и вкус</span><span data-lv>Notikumu un garšas vēlmes</span></label><label><input type="radio" name="q9" value="c"><span data-ru>Самую дорогую бутылку</span><span data-lv>Dārgāko pudeli</span></label></div>
+    <div class="q" data-a="a"><h3 data-ru>10. Как хранить игристое?</h3><h3 data-lv>10. Kā uzglabāt dzirkstošo?</h3><label><input type="radio" name="q10" value="a"><span data-ru>Без жары, солнца и резких перепадов температуры</span><span data-lv>Bez karstuma, saules un straujām temperatūras maiņām</span></label><label><input type="radio" name="q10" value="b"><span data-ru>Рядом с батареей</span><span data-lv>Blakus radiatoram</span></label><label><input type="radio" name="q10" value="c"><span data-ru>Всегда в морозильнике</span><span data-lv>Vienmēr saldētavā</span></label></div>
+    <div class="q" data-a="c"><h3 data-ru>11. Что нельзя делать при открытии?</h3><h3 data-lv>11. Ko nedrīkst darīt, atverot pudeli?</h3><label><input type="radio" name="q11" value="a"><span data-ru>Держать пробку</span><span data-lv>Turēt korķi</span></label><label><input type="radio" name="q11" value="b"><span data-ru>Контролировать бутылку</span><span data-lv>Kontrolēt pudeli</span></label><label><input type="radio" name="q11" value="c"><span data-ru>Направлять пробку на человека</span><span data-lv>Virzīt korķi uz cilvēku</span></label></div>
+    <div class="q" data-a="a"><h3 data-ru>12. Что лучше предложить для запроса «сухое и фруктовое»?</h3><h3 data-lv>12. Ko labāk piedāvāt “sausam un augļainam”?</h3><label><input type="radio" name="q12" value="a"><span data-ru>Brut / подходящий Prosecco Brut</span><span data-lv>Brut / piemērots Prosecco Brut</span></label><label><input type="radio" name="q12" value="b">Doux</label><label><input type="radio" name="q12" value="c">Demi-Sec</label></div>
+    <div class="q" data-a="b"><h3 data-ru>13. Почему два Brut могут иметь разную цену?</h3><h3 data-lv>13. Kāpēc diviem Brut var būt atšķirīga cena?</h3><label><input type="radio" name="q13" value="a"><span data-ru>Только из-за сахара</span><span data-lv>Tikai cukura dēļ</span></label><label><input type="radio" name="q13" value="b"><span data-ru>Регион, бренд, метод, выдержка и позиционирование</span><span data-lv>Reģions, zīmols, metode, nogatavināšana un pozicionēšana</span></label><label><input type="radio" name="q13" value="c"><span data-ru>Дорогой всегда слаще</span><span data-lv>Dārgāks vienmēr ir saldāks</span></label></div>
+    <div class="q" data-a="c"><h3 data-ru>14. Что делать, если бюджет клиента не позволяет Champagne?</h3><h3 data-lv>14. Ko darīt, ja klienta budžets neļauj iegādāties Champagne?</h3><label><input type="radio" name="q14" value="a"><span data-ru>Отказаться от консультации</span><span data-lv>Beigt konsultāciju</span></label><label><input type="radio" name="q14" value="b"><span data-ru>Дать любую бутылку</span><span data-lv>Iedot jebkuru pudeli</span></label><label><input type="radio" name="q14" value="c"><span data-ru>Уточнить, обязателен ли Champagne, и подобрать альтернативу</span><span data-lv>Noskaidrot, vai Champagne ir obligāts, un piedāvāt alternatīvu</span></label></div>
+    <div class="q" data-a="c"><h3 data-ru>15. Какой вид игристого вина обычно будет самым дорогим?</h3><h3 data-lv>15. Kurš dzirkstošā vīna veids parasti būs visdārgākais?</h3><label><input type="radio" name="q15" value="a">Prosecco</label><label><input type="radio" name="q15" value="b">Crémant</label><label><input type="radio" name="q15" value="c"><span data-ru>Шампанское</span><span data-lv>Šampanietis</span></label></div>
+    <div class="q" data-a="c"><h3 data-ru>16. Клиент спрашивает: «Я хочу самое сладкое игристое вино». Что вы предложите?</h3><h3 data-lv>16. Klients jautā: “Es vēlos pašu saldāko dzirkstošo vīnu.” Ko jūs ieteiksiet?</h3><label><input type="radio" name="q16" value="a">Dry / Sec</label><label><input type="radio" name="q16" value="b">Demi-Sec</label><label><input type="radio" name="q16" value="c">Doux</label></div>
+    <div class="q" data-a="a"><h3 data-ru>17. При какой температуре рекомендуется подавать Asti?</h3><h3 data-lv>17. Kādā temperatūrā ieteicams pasniegt Asti?</h3><label><input type="radio" name="q17" value="a">6–8 °C</label><label><input type="radio" name="q17" value="b">10–11 °C</label><label><input type="radio" name="q17" value="c">9–10 °C</label></div>
+<button type="button" class="primary dark wide" onclick="finishExam()"><span data-ru>Завершить тест</span><span data-lv>Pabeigt testu</span></button>
+  </form>
+  <div id="result" class="result hidden"></div>
+</section>
+
+</main>
+</div>
+
+<footer><span>VYNOTEKA · Wine Academy</span><span data-ru>Внутреннее обучение персонала</span><span data-lv>Iekšējā darbinieku apmācība</span></footer>
+<script>
+window.PRODUCTS = [{"name": "Rīgas Oriģinālais dzirkstošais vīns 0,2L 11,5%", "cat": "Latvija", "style": "sauss / сухое", "note": "Mazā 0,2 L pudele; labs variants vienai glāzei vai nelielai dāvanai.", "source": "https://vynoteka.lv/rigas-originalais-dzirkstosais-vins-0-2l"}, {"name": "Rīgas Šampanietis Bruts 0,75 L", "cat": "Latvija", "style": "Brut / sauss", "note": "VYNOTEKA aprakstā norādīta Charmat metode; aperitīvam un sieram.", "source": "https://vynoteka.lv/rigas-sampanietis-bruts-075-l"}, {"name": "Brilla Prosecco Extra Dry 0,75 L", "cat": "Itālija · Prosecco", "style": "Extra Dry", "note": "Glera; viegls, augļains stils; piemērots zivīm.", "source": "https://vynoteka.lv/ru/brilla-prosecco-extra-dry-075-l"}, {"name": "Sant'Orsola Prosecco Extra Dry 0,75 L", "cat": "Itālija · Prosecco", "style": "Extra Dry", "note": "Aromātisks un viegls Prosecco.", "source": "https://vynoteka.lv/en/santorsola-prosecco-extra-dry-075-l"}, {"name": "Montelvini Asolo Prosecco Extra Brut 0,75 L", "cat": "Itālija · Prosecco", "style": "Extra Brut", "note": "Glera; sausāks stils salīdzinājumā ar Extra Dry.", "source": "https://vynoteka.lv/en/montelvini-asolo-prosecco-extra-brut-075-l"}, {"name": "Corvezzo Organic Prosecco Valdobbiadene Brut 0,75 L", "cat": "Itālija · Valdobbiadene", "style": "Brut", "note": "Glera; organisks Prosecco; tradicionāli viegls un svaigs profils.", "source": "https://vynoteka.lv/en/corvezzo-organic-prosecco-valdobbiadene-brut-075-l"}, {"name": "Martini Prosecco DOC 0,75 L", "cat": "Itālija · Veneto", "style": "sauss / dry", "note": "Glera; ābolu, persiku un citrusaugļu notis; viegls stils.", "source": "https://vynoteka.lv/martini-prosecco-doc-075-l"}, {"name": "Martini Rosé D.O.C. 0,75 L", "cat": "Itālija", "style": "pussausais / semi-dry", "note": "Rozā dzirkstošais vīns; Pinot Noir + Glera; aperitīvam un desertiem.", "source": "https://vynoteka.lv/martini-prosecco-rose-doc-075l-115"}, {"name": "Martini Asti 0,75 L", "cat": "Itālija · Asti", "style": "salds / sweet", "note": "Moscato; 7,5%; izteikti augļains un piemērots desertiem.", "source": "https://vynoteka.lv/martini-asti-075-l"}, {"name": "Martini Frizzante Semiseco 0,75 L", "cat": "Itālija", "style": "pussausais / semi-dry", "note": "Maigāks un saldāks stils; der sieriem, uzkodām un desertiem.", "source": "https://vynoteka.lv/martini-frizzante-semiseco-075-l"}, {"name": "Cava Jaume Serra Castelfino Brut 0,75 L", "cat": "Spānija · Cava", "style": "Brut", "note": "Tradicionālā metode; Xarel-lo, Parellada, Macabeo; zivīm un jūras veltēm.", "source": "https://vynoteka.lv/en/cava-jaume-serra-castelfino-brut-075-l"}, {"name": "Dom Potier Cava Demi Sec 0,75 L", "cat": "Spānija · Cava", "style": "Demi-Sec / pussauss", "note": "Xarel-lo, Parellada, Macabeo; mīkstāks un saldāks stils.", "source": "https://vynoteka.lv/ru/dom-potier-cava-demi-sec-075-l"}, {"name": "Vilarnau Cava Ice Reserva 0,75 L", "cat": "Spānija · Cava", "style": "sauss", "note": "Sausais Cava; piemērots zivīm un salātiem.", "source": "https://vynoteka.lv/vilarnau-cava-ice-reserva-075-l"}, {"name": "Zinck Crémant d'Alsace Brut 0,75 L", "cat": "Francija · Alsace", "style": "Brut", "note": "Chardonnay, Pinot Noir, Pinot Blanc; citrusaugļi, bumbieris un grauzdiņa nianses.", "source": "https://vynoteka.lv/zinck-cremant-dalsace-brut-dzirkstosais-vins-075l-125"}, {"name": "Zinck Crémant d'Alsace Rosé 0,75 L", "cat": "Francija · Alsace", "style": "Brut / dry", "note": "Pinot Noir; ķiršu, zemeņu un aveņu aromāti; aperitīvam.", "source": "https://vynoteka.lv/zinck-cremant-d%C2%B4alsace-rose-dzirkstosais-vins-075l-125"}, {"name": "Château Champteloup Crémant de Loire Brut 0,75 L", "cat": "Francija · Loire", "style": "Brut", "note": "Chardonnay + Chenin Blanc; balti ziedi, persiks, dzeltenais ābols; jūras veltēm.", "source": "https://vynoteka.lv/chateau-chamteloup-cremant-de-loire-brut-075-l"}, {"name": "Cremant de Bourgogne Diamant 0,75 L", "cat": "Francija · Bourgogne", "style": "sauss / dry", "note": "Chardonnay; zivīm un salātiem.", "source": "https://vynoteka.lv/cremant-de-bourgogne-diamant-075-l"}, {"name": "Moutard Crémant de Bourgogne Brut 0,75 L", "cat": "Francija · Bourgogne", "style": "Brut", "note": "Chardonnay, Pinot Noir, Aligoté; méthode traditionnelle; 12 mēnešu nogatavināšana.", "source": "https://vynoteka.lv/moutard-cremant-de-bourgogne-brut-075-l"}, {"name": "Mumm Cordon Rouge Brut 0,75 L", "cat": "Francija · Champagne", "style": "Brut", "note": "Champagne; Chardonnay, Pinot Noir, Pinot Meunier; augļu un karameles nianses.", "source": "https://vynoteka.lv/mumm-cordon-rouge-brut-075-l"}, {"name": "Menestrello Prosecco 0,75L 11%", "cat": "Itālija · Prosecco", "style": "sauss / сухое", "note": "Glera; svaigs un atsvaidzinošs, ar ziedu un balto persiku aromātiem; aperitīvam, zivīm un aukstajām uzkodām.", "source": "https://vynoteka.lv/menestrello-prosecco-075-l"}, {"name": "Canti Prosecco Ice 0,75 L", "cat": "Itālija · Prosecco", "style": "sauss / сухое", "note": "11%; sauss Prosecco, piemērots zivīm; produkta kartītē norādīts kā dzirkstošais vīns.", "source": "https://vynoteka.lv/canti-prosecco-ice-075-l"}, {"name": "Zonin Prosecco Cuvée 1821 0,75 L", "cat": "Itālija · Veneto · Prosecco", "style": "sauss / сухое", "note": "Glera; sauss un ābolains profils ar citrona niansēm; labs svētkiem un zivīm/salātiem.", "source": "https://vynoteka.lv/zonin-prosecco-cuvee-1821-075-l"}, {"name": "Ville D'Arfanta Prosecco Millesimato 0,75 L", "cat": "Itālija · Veneto · Prosecco", "style": "sauss / сухое", "note": "Glera; 11%; sauss, piemērots zivīm un salātiem.", "source": "https://vynoteka.lv/en/ville-darfanta-prosecco-millesimato-075-l"}, {"name": "Ville d'Arfanta Prosecco Millesimato Valdobbiadene 0,75 L", "cat": "Itālija · Treviso · Prosecco", "style": "Brut / ļoti sauss", "note": "Glera; VYNOTEKA klasificēts kā ļoti sauss/naturāls Briut vīns; piemērots zivīm un salātiem.", "source": "https://vynoteka.lv/ville-darfanta-prosecco-millesimato-valdobbiadene-075-l"}, {"name": "Premius Brut Crémant de Bordeaux 0,75 L", "cat": "Francija · Bordeaux · Crémant", "style": "Brut / sauss", "note": "12%; Cabernet Franc; sauss Francijas dzirkstošais, piemērots zivīm un salātiem.", "source": "https://vynoteka.lv/premius-brut-cremant-de-bordeaux-075-l"}, {"name": "Zonin Prosecco Cuvee 1821 DOC 0,75 L", "cat": "Itālija · Veneto · Prosecco", "style": "Brut / sauss", "note": "Glera; sauss, ābolains, ar vieglām minerālām un citrusu notīm.", "source": "https://vynoteka.lv/zonin-prosecco-cuvee-1821-075-l"}, {"name": "Ville d'Arfanta Prosecco Treviso Millesimato Extra Dry 0,75 L", "cat": "Itālija · Treviso · Prosecco", "style": "Extra Dry", "note": "Glera; balto augļu, citrusaugļu un vieglu ziedu notis; aperitīvam.", "source": "https://vynoteka.lv/ville-darfanta-prosecco-treviso-millesimato-extra-dry-075l-11"}, {"name": "Felicita Prosecco Demi Sec 0,75 L", "cat": "Itālija · Prosecco", "style": "Demi-Sec / pussauss", "note": "Mīkstāks un saldāks Prosecco stils; VYNOTEKA to klasificē kā pussauss.", "source": "https://vynoteka.lv/felicita-prosecco-demi-sec-dzirkstosais-vins-075l"}, {"name": "Brilla Prosecco Spumante Rosé 0,2 L", "cat": "Itālija · Prosecco Rosé", "style": "sauss / dry", "note": "Mazā 0,2 L rozā pudele; VYNOTEKA norāda sausu stilu un jūras veltes kā saderību.", "source": "https://vynoteka.lv/brilla-prosecco-spumante-rose-dzirkstosais-vins-02-l"}, {"name": "Vilarnau Brut Nature Organic 0,75 L", "cat": "Spānija · Cava", "style": "Brut Nature / ļoti sauss", "note": "Ekoloģiska Cava; Macabeo (Viura); ļoti sausais stils.", "source": "https://vynoteka.lv/vilarnau-brut-nature-organic-075-l"}, {"name": "Cava Jaume Serra Castelfino Semi Seco 0,75 L", "cat": "Spānija · Cava", "style": "Semi Seco / pussauss", "note": "Tradicionālā metode; augļains un pussauss profils.", "source": "https://vynoteka.lv/en/cava-jaume-serra-castelfino-semi-seco-075-l"}, {"name": "Corte dei Rovi Spumante Moscato 0,75 L", "cat": "Itālija · Moscato", "style": "salds / sweet", "note": "Moscato; salds, 6,5%; piemērots desertiem.", "source": "https://vynoteka.lv/corte-dei-rovi-spumante-moscato-075-l"}, {"name": "Kazayak Moscato Aerated 0,25 L", "cat": "Moldova · Moscato", "style": "pussalds / semi-sweet", "note": "Moscato; pussalds dzirkstošais 0,25 L bundžā; paredzēts desertiem.", "source": "https://vynoteka.lv/kazayak-moscato-aerated-025-l"}, {"name": "Moët & Chandon Imperial 0,75 L", "cat": "Francija · Champagne", "style": "Brut", "note": "Champagne; Chardonnay, Pinot Noir, Pinot Meunier; klasika premium segmentā.", "source": "https://vynoteka.lv/moet-chandon-imperia-boxl-075-l"}, {"name": "Moët & Chandon Imperial 0,375 L", "cat": "Francija · Champagne", "style": "Brut", "note": "Mazais 0,375 L formāts; Champagne ar Chardonnay, Pinot Noir un Pinot Meunier.", "source": "https://vynoteka.lv/moet-chandon-imperial-0375-l"}, {"name": "Piper-Heidsieck Cuvée Brut 0,75 L", "cat": "Francija · Champagne", "style": "Brut", "note": "Klasisks non-vintage Champagne ar augļu, bumbieru, ābolu un citrusaugļu notīm.", "source": "https://vynoteka.lv/piper-heidsieck-cuvee-brut-075-l"}];
+</script>
+<script src="script.js"></script>
+<script>
+  document.querySelectorAll('.content > .section:not(#exam)').forEach((section) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'primary dark course-next';
+    button.innerHTML = '<span data-ru>Дальше →</span><span data-lv>Tālāk →</span>';
+    button.addEventListener('click', () => {
+      const currentNav = document.querySelector(`.nav[data-target="${section.id}"]`);
+      const nextNav = currentNav && currentNav.nextElementSibling;
+      if (nextNav && nextNav.classList.contains('nav')) nextNav.click();
+    });
+    section.appendChild(button);
+  });
+</script>
+</body>
+</html></body></html>
